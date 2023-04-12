@@ -22,13 +22,16 @@ def desiçao(p1,p2):
             print('EMPATE')
 
 while True:
-    pl1=input(str("digite o tesoura,pedra,papel p/p1 "))
-    p1=pl1.upper()
-    pl2=input(str("digite o tesoura,pedra,papel p/p2 "))
-    p2=pl2.upper()
-    desiçao(p1,p2)
-
-    xL=input("deseja continrua?s/n ")
-    x=xL.upper()
-    if x == 'N':
-        break
+    while True:
+        try:
+            pl1=input(str("digite o tesoura,pedra,papel p/p1 "))
+            pl2=input(str("digite o tesoura,pedra,papel p/p2 "))
+        except ValueError:
+            print("digitou algo indevido , digite novamente:")
+        p1=pl1.upper()
+        p2=pl2.upper()
+        desiçao(p1,p2)
+        xL=input("deseja continrua?s/n ")
+        x=xL.upper()
+        if x == 'N':
+            break
